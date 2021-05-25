@@ -13,7 +13,7 @@ export default function Home() {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(function (position) {
         const location = fetcher(
-          `http://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=b0da7203bde69387f4db3e117e687b2c`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=b0da7203bde69387f4db3e117e687b2c`
         ).then((l) => setLocation(l.name));
       });
     } else {
@@ -61,7 +61,7 @@ export default function Home() {
           <div className="border  col-span-5 focus-within:border-blue-500 focus-within:text-blue-500 transition-all duration-500 relative rounded p-1">
             <div className="-mt-4 absolute tracking-wider px-1 uppercase text-xs">
               <p>
-                <label for="name" className="bg-white text-gray-600 px-1">
+                <label htmlFor="name" className="bg-white text-gray-600 px-1">
                   LOCATION SEARCH
                 </label>
               </p>
